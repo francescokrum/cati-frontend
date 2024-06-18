@@ -1,12 +1,9 @@
 .titulo{
   display: flex;
   margin-top: 20px;
+  height: 80px;
   justify-content: center;
   position: relative;
-}
-
-#icon{
-  margin-left: -50vh;
 }
 
 .cadastro-container{

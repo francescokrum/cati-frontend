@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { PaginaListaUnidadeComponent } from './pages/pagina-lista-unidade/pagina-lista-unidade.component';
 import { ListaUnidadeComponent } from './_components/lista-unidade/lista-unidade.component';
 import { PaginaCadastroProdutoComponent } from './pages/pagina-cadastro-produto/pagina-cadastro-produto.component';
+import { ButtonVoltarComponent } from './_components/_ui/button-voltar/button-voltar.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { PaginaCadastroProdutoComponent } from './pages/pagina-cadastro-produto/
     PaginaListaUnidadeComponent,
     ListaUnidadeComponent,
     PaginaCadastroProdutoComponent,
+    ButtonVoltarComponent,
   ],
   imports: [
     BrowserModule,

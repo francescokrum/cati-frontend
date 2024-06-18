@@ -5,7 +5,7 @@
 
   <div class="dropdown" [ngClass]="{'show': dropdowns[0].isOpen}">
     <button class="dropdown-btn" (click)="toggleDropdown(0)">
-      Usuários <i class="fa fa-chevron-down"></i>
+      Usuários <i class="fa" [ngClass]="{'fa-chevron-down': !dropdowns[0].isOpen, 'fa-chevron-up': dropdowns[0].isOpen}"></i>
     </button>
     <div class="dropdown-content" *ngIf="dropdowns[0].isOpen">
       <a href="#">Visualizar Usuários</a>
@@ -14,7 +14,7 @@
 
   <div class="dropdown" [ngClass]="{'show': dropdowns[1].isOpen}">
     <button class="dropdown-btn" (click)="toggleDropdown(1)">
-      Unidade de Negócio <i class="fa fa-chevron-down"></i>
+      Unidade de Negócio <i class="fa" [ngClass]="{'fa-chevron-down': !dropdowns[1].isOpen, 'fa-chevron-up': dropdowns[1].isOpen}"></i>
     </button>
     <div class="dropdown-content" *ngIf="dropdowns[1].isOpen">
       <a href="/paginaCadastroUnidade">Cadastrar Unidade de Negócio</a>
@@ -24,7 +24,7 @@
 
   <div class="dropdown" [ngClass]="{'show': dropdowns[2].isOpen}">
     <button class="dropdown-btn" (click)="toggleDropdown(2)">
-      Produto <i class="fa fa-chevron-down"></i>
+      Produto <i class="fa" [ngClass]="{'fa-chevron-down': !dropdowns[2].isOpen, 'fa-chevron-up': dropdowns[2].isOpen}"></i>
     </button>
     <div class="dropdown-content" *ngIf="dropdowns[2].isOpen">
       <a href="#">Cadastrar Produto</a>
@@ -34,7 +34,7 @@
 
   <div class="dropdown" [ngClass]="{'show': dropdowns[3].isOpen}">
     <button class="dropdown-btn" (click)="toggleDropdown(3)">
-      Chamados <i class="fa fa-chevron-down"></i>
+      Chamados <i class="fa" [ngClass]="{'fa-chevron-down': !dropdowns[3].isOpen, 'fa-chevron-up': dropdowns[3].isOpen}"></i>
     </button>
     <div class="dropdown-content" *ngIf="dropdowns[3].isOpen">
       <a href="#">Visualizar chamados</a>
@@ -43,7 +43,7 @@
 
   <div class="dropdown" [ngClass]="{'show': dropdowns[4].isOpen}">
     <button class="dropdown-btn" (click)="toggleDropdown(4)">
-      Desenvolvedores <i class="fa fa-chevron-down"></i>
+      Desenvolvedores <i class="fa" [ngClass]="{'fa-chevron-down': !dropdowns[4].isOpen, 'fa-chevron-up': dropdowns[4].isOpen}"></i>
     </button>
     <div class="dropdown-content" *ngIf="dropdowns[4].isOpen">
       <a routerLink="/cadastrarDev">Cadastrar desenvolvedor</a>
@@ -53,7 +53,7 @@
 
   <div class="dropdown" [ngClass]="{'show': dropdowns[5].isOpen}">
     <button class="dropdown-btn" (click)="toggleDropdown(5)">
-      Task <i class="fa fa-chevron-down"></i>
+      Task <i class="fa" [ngClass]="{'fa-chevron-down': !dropdowns[5].isOpen, 'fa-chevron-up': dropdowns[5].isOpen}"></i>
     </button>
     <div class="dropdown-content" *ngIf="dropdowns[5].isOpen">
       <a href="#">Enviar Task</a>
