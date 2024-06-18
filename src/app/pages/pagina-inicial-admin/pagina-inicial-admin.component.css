@@ -1,0 +1,14 @@
+.titulo{
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+  margin-left: 250px;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 300px;
+}
+
+h1{
+  font-size: 40px;
+  color: blue;
+}

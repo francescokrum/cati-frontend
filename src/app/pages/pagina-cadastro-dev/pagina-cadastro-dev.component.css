@@ -1,0 +1,24 @@
+.titulo{
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  position: relative;
+}
+
+#icon{
+  margin-left: -50vh;
+}
+
+.cadastro-container{
+  display: flex;
+  margin-left: 250px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+}
+
+h1{
+  font-size: 40px;
+  color: blue;
+}
