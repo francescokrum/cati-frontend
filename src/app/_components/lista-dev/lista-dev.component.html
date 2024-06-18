@@ -1,0 +1,46 @@
+<div class="cadastro-container">
+  <div class="titulo">
+    <a routerLink="/paginaInicialAdmin">
+      <img id="icon" src="./assets/iconSeta/seta-para-a-esquerda.png">
+    </a>
+    <h1>Lista de Desenvolvedores</h1>
+  </div>
+  <div class="table-container">
+    <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>Email</th>
+          <th>Login</th>
+          <th>Senha</th>
+          <th>Data de Nascimento</th>
+          <th>Salário</th>
+          <th>Cargo</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let desenvolvedor of lista">
+          <td>{{ desenvolvedor.id }}</td>
+          <td>{{ desenvolvedor.nome }}</td>
+          <td>{{ desenvolvedor.cpf }}</td>
+          <td>{{ desenvolvedor.email }}</td>
+          <td>{{ desenvolvedor.login }}</td>
+          <td>{{ desenvolvedor.senha }}</td>
+          <td>{{ desenvolvedor.dataNasc | date:'dd/MM/yyyy' }}</td>
+          <td>{{ desenvolvedor.salario.toFixed(2) | currency }}</td>
+          <td>{{ desenvolvedor.cargo }}</td>
+          <td>
+            <button class="btn btn-edit">Editar</button>
+            <button class="btn btn-delete" (click)="removerDev(desenvolvedor)">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<ng-template #noData>
+  <p>Nenhum desenvolvedor encontrado.</p>
+</ng-template>

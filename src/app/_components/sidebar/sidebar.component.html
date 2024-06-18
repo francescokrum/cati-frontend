@@ -1,0 +1,63 @@
+<div class="sidebar">
+  <div class="sidebar-header">
+    <h2>Fulano</h2>
+  </div>
+
+  <div class="dropdown" [ngClass]="{'show': dropdowns[0].isOpen}">
+    <button class="dropdown-btn" (click)="toggleDropdown(0)">
+      Usuários <i class="fa fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-content" *ngIf="dropdowns[0].isOpen">
+      <a href="#">Visualizar Usuários</a>
+    </div>
+  </div>
+
+  <div class="dropdown" [ngClass]="{'show': dropdowns[1].isOpen}">
+    <button class="dropdown-btn" (click)="toggleDropdown(1)">
+      Unidade de Negócio <i class="fa fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-content" *ngIf="dropdowns[1].isOpen">
+      <a href="/paginaCadastroUnidade">Cadastrar Unidade de Negócio</a>
+      <a href="/listaUnidade">Visualizar Unidades de Negócio</a>
+    </div>
+  </div>
+
+  <div class="dropdown" [ngClass]="{'show': dropdowns[2].isOpen}">
+    <button class="dropdown-btn" (click)="toggleDropdown(2)">
+      Produto <i class="fa fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-content" *ngIf="dropdowns[2].isOpen">
+      <a href="#">Cadastrar Produto</a>
+      <a href="#">Visualizar Produtos</a>
+    </div>
+  </div>
+
+  <div class="dropdown" [ngClass]="{'show': dropdowns[3].isOpen}">
+    <button class="dropdown-btn" (click)="toggleDropdown(3)">
+      Chamados <i class="fa fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-content" *ngIf="dropdowns[3].isOpen">
+      <a href="#">Visualizar chamados</a>
+    </div>
+  </div>
+
+  <div class="dropdown" [ngClass]="{'show': dropdowns[4].isOpen}">
+    <button class="dropdown-btn" (click)="toggleDropdown(4)">
+      Desenvolvedores <i class="fa fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-content" *ngIf="dropdowns[4].isOpen">
+      <a routerLink="/cadastrarDev">Cadastrar desenvolvedor</a>
+      <a href="/listaDev">Visualizar desenvolvedores</a>
+    </div>
+  </div>
+
+  <div class="dropdown" [ngClass]="{'show': dropdowns[5].isOpen}">
+    <button class="dropdown-btn" (click)="toggleDropdown(5)">
+      Task <i class="fa fa-chevron-down"></i>
+    </button>
+    <div class="dropdown-content" *ngIf="dropdowns[5].isOpen">
+      <a href="#">Enviar Task</a>
+      <a href="#">Visualizar Task</a>
+    </div>
+  </div>
+</div>
