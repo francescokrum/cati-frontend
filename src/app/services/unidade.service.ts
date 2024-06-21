@@ -20,12 +20,16 @@ export class UnidadeService {
     }
 
 
+    cadastrarUnidade(unidade: Unidade): Observable<Unidade>{
+      return this._httpClient.post<Unidade>(this.url + '/unidadeDeNegocio/cadastrarUnidadeDeNegocio', unidade)
+    }
+
     buscarUnidades(): Observable<Unidade[]>{
       return this._httpClient.get<Unidade[]>(this.url + '/unidadeDeNegocio')
     }
 
     removerUnidade(id: number): Observable<string>{
-      return this._httpClient.delete<string>(this.url + '/unidadeDeNegocio/'+id, { responseType: 'text' as 'json' })
+      return this._httpClient.delete<string>(this.url + '/unidadeDeNegocio/' + id, { responseType: 'text' as 'json' })
     }
 
 

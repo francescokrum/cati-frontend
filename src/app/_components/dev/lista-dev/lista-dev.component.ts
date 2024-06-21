@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Desenvolvedor } from '../../models/desenvolvedor';
-import { DesenvolvedorService } from '../../services/desenvolvedor.service';
+import { Desenvolvedor } from '../../../models/desenvolvedor';
+import { DesenvolvedorService } from '../../../services/desenvolvedor.service';
 
 @Component({
   selector: 'app-lista-dev',

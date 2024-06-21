@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { DesenvolvedorService } from '../../services/desenvolvedor.service';
-import { Desenvolvedor } from '../../models/desenvolvedor';
+import { DesenvolvedorService } from '../../../services/desenvolvedor.service';
+import { Desenvolvedor } from '../../../models/desenvolvedor';
 
 @Component({
   selector: 'app-form-cadastro-dev',
@@ -11,8 +11,7 @@ export class FormCadastroDevComponent {
 
 desenvolvedor = new Desenvolvedor()
 
-  constructor(){
-  }
+  constructor(){}
 
   desenvolvedorService  = inject(DesenvolvedorService);
 

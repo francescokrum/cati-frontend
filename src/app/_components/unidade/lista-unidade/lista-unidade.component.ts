@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { Unidade } from '../../models/unidade';
-import { UnidadeService } from '../../services/unidade.service';
+import { Unidade } from '../../../models/unidade';
+import { UnidadeService } from '../../../services/unidade.service';
 
 @Component({
   selector: 'app-lista-unidade',
