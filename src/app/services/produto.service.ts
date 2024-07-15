@@ -25,6 +25,10 @@ export class ProdutoService {
     return this._httpClient.get<Produto[]>(this.url + '/produto')
   }
 
+  buscarProdutosPorCliente(): Observable<Produto[]>{
+    return this._httpClient.get<Produto[]>(this.url + '/produto/buscarProdutosPorCliente')
+  }
+
   removerProduto(id: number): Observable<string>{
     return this._httpClient.delete<string>(this.url + '/produto/' + id, { responseType: 'text' as 'json' })
   }
