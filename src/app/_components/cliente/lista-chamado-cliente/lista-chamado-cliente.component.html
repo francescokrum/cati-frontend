@@ -1,0 +1,21 @@
+<div class="main-container">
+  <div class="container">
+    <div class="titulo">Meu histórico de chamados</div>
+    <div class="login-form" *ngFor="let chamado of chamados">
+      <div class="form-group">
+        <label for="titulo">Problema:</label>
+        <p>{{ chamado.titulo }}</p>
+      </div>
+      <div class="form-group">
+        <label for="descricao">Descrição:</label>
+        <p>{{ chamado.descricao }}</p>
+      </div>
+      <div class="form-group">
+        <label for="gravidade">Gravidade:</label>
+        <h4 class="inline">{{ chamado.gravidade }}</h4>
+        <label for="gravidade" id="status">Status:</label>
+        <h4 class="inline">{{ chamado.status }}</h4>
+      </div>
+    </div>
+  </div>
+</div>

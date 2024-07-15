@@ -1,0 +1,38 @@
+<div class="login-container">
+  <div class="titulo">Solicitar Chamado</div>
+  <div class="login-form">
+    <form (ngSubmit)="cadastrarChamado()">
+      <div class="form-group">
+        <label for="titulo">Qual o problema?</label>
+        <input type="text" id="titulo" name="titulo" [(ngModel)]="chamado.titulo">
+      </div>
+      <div class="form-group">
+        <label for="descricao">Descreva o seu problema:</label>
+        <input type="text" id="descricao" name="descricao" [(ngModel)]="chamado.descricao">
+      </div>
+      <div class="form-group">
+        <label for="gravidade">Gravidade:</label><br>
+        <label class="gravidade-option">
+          <input type="radio" id="leve" name="gravidade" value="LEVE" [(ngModel)]="chamado.gravidade"> Leve
+        </label>
+        <label class="gravidade-option">
+          <input type="radio" id="media" name="gravidade" value="MEDIA" [(ngModel)]="chamado.gravidade"> Média
+        </label>
+        <label class="gravidade-option">
+          <input type="radio" id="urgente" name="gravidade" value="URGENTE" [(ngModel)]="chamado.gravidade"> Urgente
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="produto">Referente a qual produto?</label>
+        <select id="produto" name="produto" [(ngModel)]="chamado.produto" (ngModelChange)="onProdutoChange($event)">
+          <option *ngFor="let produto of produtos" [ngValue]="produto">{{ produto.nome }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="anexo">Se necessário, mande uma foto da sua tela:</label>
+        <input type="file" id="anexo" name="anexo">
+      </div>
+      <button type="submit">Solicitar chamado</button>
+    </form>
+  </div>
+</div>
