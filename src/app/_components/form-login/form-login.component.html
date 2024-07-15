@@ -2,14 +2,14 @@
   <div class="login-form">
     <h2 class="titulo">Central de Atendimento de TI</h2>
     <h2>Login</h2>
-    <form>
+    <form (ngSubmit)="logar()">
       <div class="form-group">
-        <label for="username">Login:</label>
-        <input type="text" id="username" name="username">
+        <label for="login">Login:</label>
+        <input type="text" id="login" name="login" [(ngModel)]="login.login">
       </div>
       <div class="form-group">
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password">
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" [(ngModel)]="login.senha">
       </div>
         <p>Não possui uma conta?
         <a routerLink="/cadastrarCliente">Cadastre-se</a>

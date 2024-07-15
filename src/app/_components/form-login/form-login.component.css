@@ -13,6 +13,11 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.green-snackbar {
+  background-color: #4caf50; /* Cor verde */
+  color: #ffffff; /* Cor do texto branco */
+}
+
 .titulo {
   font-size: 35px;
   color: purple;
