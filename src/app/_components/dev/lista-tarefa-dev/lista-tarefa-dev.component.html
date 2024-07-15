@@ -1,0 +1,32 @@
+<div class="main-container">
+  <div class="container">
+    <div class="titulo">Minhas tarefas</div>
+    <div *ngFor="let tarefa of tarefas" class="login-form">
+      <form (ngSubmit)="editarTarefa(tarefa)">
+        <div class="form-group">
+          <label for="titulo">Tarefa:</label>
+          <p>{{ tarefa.titulo }}</p>
+          <input type="hidden" id="titulo" name="titulo" [(ngModel)]="tarefa.titulo" />
+        </div>
+        <div class="form-group">
+          <label for="descricao">Descrição:</label>
+          <p>{{ tarefa.descricao }}</p>
+          <input type="hidden" id="descricao" name="descricao" [(ngModel)]="tarefa.descricao" />
+        </div>
+        <div class="form-group">
+          <label for="status">Status:</label>
+          <h4 class="inline">{{ tarefa.status }}</h4>
+        </div>
+        <div class="form-group">
+          <label for="status">Atualizar status da task:</label>
+          <select id="status" name="status" [(ngModel)]="tarefa.status">
+            <option value="ENVIADA">Enviada</option>
+            <option value="EM_ANALISE">Em análise</option>
+            <option value="FINALIZADO">Finalizada</option>
+          </select>
+          <button type="submit">Atualizar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
