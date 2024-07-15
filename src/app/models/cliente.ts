@@ -1,12 +1,7 @@
-export class Cliente {
+import { Usuario } from "./usuario";
 
-  id?: number;
-  nome!: string;
-  cpf!: string;
-  email!: string;
-  permissao!: string;
-  login!: string;
-  senha!: string;
-  cnpjEmpresa!: string;
-  
+export class Cliente extends Usuario {
+
+  cnpj_unidade!: string;
+
 }

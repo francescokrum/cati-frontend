@@ -1,9 +1,8 @@
 import { Unidade } from "./unidade";
 
-export class Produto {
+export class ProdutoDTO{
 
   id?: number;
   nome!: string;
   unidadeDeNegocio!: Unidade;
-
 }

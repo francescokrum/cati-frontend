@@ -1,14 +1,8 @@
 import * as Big from 'big.js'
+import { Usuario } from './usuario'
 
-export class Desenvolvedor {
+export class Desenvolvedor extends Usuario{
 
-  id?: number
-  nome!: string
-  cpf!: string
-  email!: string
-  permissao?: string
-  login!: string
-  senha!: string
   dataNasc!: Date
   salario!: Big
   cargo!: string
