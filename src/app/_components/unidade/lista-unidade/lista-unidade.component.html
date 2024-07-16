@@ -1,27 +1,29 @@
-<div class="cadastro-container">
-  <div class="titulo">
-    <h1>Lista de Unidades de Negócio</h1>
-  </div>
-  <div class="table-container">
-    <table class="table table-striped table-bordered">
-      <thead class="thead-dark">
-        <tr>
-          <th>Nome</th>
-          <th>CNPJ</th>
-          <th>Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let unidade of lista">
-          <td>{{ unidade.nome }}</td>
-          <td>{{ unidade.cnpj }}</td>
-          <td>
-            <button class="btn btn-edit">Editar</button>
-            <button class="btn btn-delete" (click)="removerDev(unidade)">Excluir</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<div class="main-container">
+  <div class="cadastro-container">
+    <div class="titulo">
+      <h1>Lista de Unidades de Negócio</h1>
+    </div>
+    <div class="table-container">
+      <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Nome</th>
+            <th>CNPJ</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let unidade of lista">
+            <td>{{ unidade.nome }}</td>
+            <td>{{ unidade.cnpj }}</td>
+            <td>
+              <button class="btn btn-edit">Editar</button>
+              <button class="btn btn-delete" (click)="removerDev(unidade)">Excluir</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 <ng-template #noData>

@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { Unidade } from '../../../models/unidade';
 import { UnidadeService } from '../../../services/unidade.service';
-import { Produto } from '../../../models/produto';
 import { ProdutoService } from '../../../services/produto.service';
+import { ProdutoDTO } from '../../../models/produtoDTO';
 
 @Component({
   selector: 'app-form-cadastro-produto',
   templateUrl: './form-cadastro-produto.component.html',
-  styleUrl: './form-cadastro-produto.component.css'
+  styleUrls: ['./form-cadastro-produto.component.css']
 })
 export class FormCadastroProdutoComponent {
-  produto: Produto = new Produto();
+  produtoDTO: ProdutoDTO = new ProdutoDTO(); // Use ProdutoDTO em vez de Produto
   unidades: Unidade[] = [];
 
-  constructor(private unidadeService: UnidadeService, private produtoService: ProdutoService) { }
+  constructor(private unidadeService: UnidadeService, private produtoService: ProdutoService) {}
 
   ngOnInit(): void {
     this.unidadeService.buscarUnidades().subscribe(
@@ -27,16 +27,15 @@ export class FormCadastroProdutoComponent {
   }
 
   cadastrarProduto(): void {
-    // Encontrar a unidade selecionada com base no idUnidade
-    const unidadeSelecionada = this.unidades.find(u => u.id === this.produto.unidade.id);
+    const unidadeSelecionada = this.unidades.find(u => u.id === this.produtoDTO.unidadeDeNegocio.id);
     if (unidadeSelecionada) {
-      this.produto.unidade = unidadeSelecionada;
+      this.produtoDTO.unidadeDeNegocio = unidadeSelecionada;
     }
 
-    this.produtoService.cadastrarProduto(this.produto).subscribe({
+    this.produtoService.cadastrarProduto(this.produtoDTO).subscribe({
       next: mensagem => {
         console.log('Produto cadastrado com sucesso:', mensagem);
-        this.produto = new Produto();
+        this.produtoDTO = new ProdutoDTO(); // Limpa o formulário após o cadastro
       },
       error: (error: any) => {
         alert('Erro ao cadastrar produto');
@@ -46,6 +45,6 @@ export class FormCadastroProdutoComponent {
   }
 
   onUnidadeChange(event: Unidade): void {
-    this.produto.unidade = event;
+    this.produtoDTO.unidadeDeNegocio = event;
   }
 }

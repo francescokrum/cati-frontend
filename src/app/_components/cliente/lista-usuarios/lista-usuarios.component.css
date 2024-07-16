@@ -1,0 +1,60 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 255px; /* Largura do sidebar */
+  align-items: center;
+}
+
+
+.cadastro-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  width: 80%; /* Ajuste conforme necessário */
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table thead {
+  background-color: #6a0dad;
+  color: #fff;
+}
+
+.table thead th {
+  padding: 15px;
+  text-align: left;
+}
+
+.table tbody td {
+  padding: 15px;
+  border: 1px solid #dee2e6;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f3e5f5;
+}
+
+.table tbody tr:hover {
+  background-color: #d1c4e9;
+}
+
+h1 {
+  color: #6a0dad;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 45px;
+}

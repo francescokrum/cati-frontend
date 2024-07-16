@@ -22,7 +22,7 @@ export class TarefaService {
     }
 
     buscarTarefaPorDev(): Observable<Tarefa[]>{
-      return this._httpClient.get<Tarefa[]>(this.url + '/tarefa/buscarTarefaPorCliente')
+      return this._httpClient.get<Tarefa[]>(this.url + '/tarefa/buscarTarefaPorDev')
     }
 
     buscarTarefas(): Observable<Tarefa[]>{

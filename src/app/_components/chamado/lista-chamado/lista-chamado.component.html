@@ -1,0 +1,38 @@
+<div class="main-container">
+  <div class="container">
+    <div class="titulo">HISTÓRICO DE CHAMADOS</div>
+    <div *ngFor="let chamado of chamados" class="login-form">
+      <form>
+        <div class="form-group">
+          <label for="titulo">Título:</label>
+          <p>{{ chamado.titulo }}</p>
+        </div>
+        <div class="form-group">
+          <label for="descricao">Descrição:</label>
+          <p>{{ chamado.descricao }}</p>
+        </div>
+        <div class="form-group">
+          <label for="status">Status:</label>
+          <h4 class="inline">{{ chamado.status }}</h4>
+        </div>
+        <div class="form-group">
+          <label for="descricao">Gravidade:</label>
+          <h4 class="inline">{{ chamado.gravidade }}</h4>
+        </div>
+        <div class="form-group">
+          <label for="descricao">Referente ao produto:</label>
+          <h4 class="inline">{{ chamado.produto.nome }}</h4>
+        </div>
+        <div class="form-group">
+          <label for="status">Atualizar status do chamado:</label>
+          <select>
+            <option value="SOLICITADO">Solicitado</option>
+            <option value="EM_ANALISE">Em análise</option>
+            <option value="FINALIZADO">Finalizado</option>
+          </select >
+          <button class="inline" id="botao" type="submit">Atualizar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

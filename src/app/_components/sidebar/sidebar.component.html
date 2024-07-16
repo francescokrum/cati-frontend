@@ -8,7 +8,7 @@
       Usuários <i class="fa" [ngClass]="{'fa-chevron-down': !dropdowns[0].isOpen, 'fa-chevron-up': dropdowns[0].isOpen}"></i>
     </button>
     <div class="dropdown-content" *ngIf="dropdowns[0].isOpen">
-      <a href="#">Visualizar Usuários</a>
+      <a routerLink="/admin/listaUsuarios">Visualizar Usuários</a>
     </div>
   </div>
 
@@ -17,8 +17,8 @@
       Unidade de Negócio <i class="fa" [ngClass]="{'fa-chevron-down': !dropdowns[1].isOpen, 'fa-chevron-up': dropdowns[1].isOpen}"></i>
     </button>
     <div class="dropdown-content" *ngIf="dropdowns[1].isOpen">
-      <a href="/paginaCadastroUnidade">Cadastrar Unidade de Negócio</a>
-      <a href="/listaUnidade">Visualizar Unidades de Negócio</a>
+      <a routerLink="/admin/paginaCadastroUnidade">Cadastrar Unidade de Negócio</a>
+      <a routerLink="/admin/listaUnidade">Visualizar Unidades de Negócio</a>
     </div>
   </div>
 
@@ -27,8 +27,8 @@
       Produto <i class="fa" [ngClass]="{'fa-chevron-down': !dropdowns[2].isOpen, 'fa-chevron-up': dropdowns[2].isOpen}"></i>
     </button>
     <div class="dropdown-content" *ngIf="dropdowns[2].isOpen">
-      <a href="/cadastrarProduto">Cadastrar Produto</a>
-      <a href="/listaProduto">Visualizar Produtos</a>
+      <a routerLink="/admin/cadastrarProduto">Cadastrar Produto</a>
+      <a routerLink="/admin/listaProduto">Visualizar Produtos</a>
     </div>
   </div>
 
@@ -37,7 +37,7 @@
       Chamados <i class="fa" [ngClass]="{'fa-chevron-down': !dropdowns[3].isOpen, 'fa-chevron-up': dropdowns[3].isOpen}"></i>
     </button>
     <div class="dropdown-content" *ngIf="dropdowns[3].isOpen">
-      <a href="#">Visualizar chamados</a>
+      <a routerLink="/admin/listarChamado">Visualizar chamados</a>
     </div>
   </div>
 
@@ -46,8 +46,8 @@
       Desenvolvedores <i class="fa" [ngClass]="{'fa-chevron-down': !dropdowns[4].isOpen, 'fa-chevron-up': dropdowns[4].isOpen}"></i>
     </button>
     <div class="dropdown-content" *ngIf="dropdowns[4].isOpen">
-      <a routerLink="/cadastrarDev">Cadastrar desenvolvedor</a>
-      <a href="/listaDev">Visualizar desenvolvedores</a>
+      <a routerLink="/admin/cadastrarDev">Cadastrar desenvolvedor</a>
+      <a routerLink="/admin/listaDev">Visualizar desenvolvedores</a>
     </div>
   </div>
 
@@ -56,8 +56,8 @@
       Task <i class="fa" [ngClass]="{'fa-chevron-down': !dropdowns[5].isOpen, 'fa-chevron-up': dropdowns[5].isOpen}"></i>
     </button>
     <div class="dropdown-content" *ngIf="dropdowns[5].isOpen">
-      <a href="#">Enviar Task</a>
-      <a href="#">Visualizar Task</a>
+      <a routerLink="/admin/cadastrarTarefa">Enviar Task</a>
+      <a routerLink="/admin/listarTarefa">Visualizar Task</a>
     </div>
   </div>
 </div>

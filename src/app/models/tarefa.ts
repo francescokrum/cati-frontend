@@ -1,3 +1,4 @@
+import { Desenvolvedor } from "./desenvolvedor";
 
 export class Tarefa{
 
@@ -5,5 +6,6 @@ export class Tarefa{
   titulo!: string;
   descricao!: string;
   status!: string;
+  desenvolvedor!: Desenvolvedor;
 
 }

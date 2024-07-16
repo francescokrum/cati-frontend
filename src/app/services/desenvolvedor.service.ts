@@ -34,5 +34,9 @@ export class DesenvolvedorService{
       return this._httpClient.put<Desenvolvedor>(this.url + '/desenvolvedor/editarDesenvolvedor', desenvolvedor)
     }
 
+    buscarDesenvolvedor(): Observable<Desenvolvedor>{
+      return this._httpClient.get<Desenvolvedor>(this.url + '/desenvolvedor/buscarDesenvolvedor')
+    }
+
 
 }

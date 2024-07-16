@@ -1,51 +1,36 @@
-/* Centraliza a tabela no contêiner principal */
-.table-container {
+.main-container {
   display: flex;
-  margin-top: 50px;
   justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 255px; /* Largura do sidebar */
   align-items: center;
-  flex-direction: column;
-  height: 30vh; /* Para centralizar verticalmente */
-  box-sizing: border-box;
 }
+
 
 .cadastro-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-left: 250px; /* Considerando a largura da sidebar */
-}
-
-#icon {
-  position: absolute;
-  left: 0;
-  margin-left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.titulo {
-  display: flex;
-  margin-top: 50px;
   justify-content: center;
   align-items: center;
-  position: relative;
-  width: 100%;
-  margin-bottom: 20px;
-  font-size: 20px;
+  margin-top: 40px;
+  width: 80%; /* Ajuste conforme necessário */
 }
 
-/* Estilo da tabela */
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .table {
-  width: 80%;
-  max-width: 1200px;
+  width: 100%;
   border-collapse: collapse;
   background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .table thead {
-  background-color: #6a0dad; /* Roxo escuro */
+  background-color: #6a0dad;
   color: #fff;
 }
 
@@ -60,11 +45,18 @@
 }
 
 .table tbody tr:nth-child(even) {
-  background-color: #f3e5f5; /* Roxo claro */
+  background-color: #f3e5f5;
 }
 
 .table tbody tr:hover {
-  background-color: #d1c4e9; /* Roxo intermediário */
+  background-color: #d1c4e9;
+}
+
+h1 {
+  color: #6a0dad;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 45px;
 }
 
 /* Estilo dos botões */
@@ -94,22 +86,10 @@
   color: white;
 }
 
-/* Estilo do título */
-h1 {
-  color: #6a0dad; /* Roxo escuro */
-  margin-bottom: 20px;
-  text-align: center;
-  font-size: 45px;
-}
-
 /* Ajustes adicionais para responsividade */
 @media (max-width: 768px) {
   .table {
     width: 100%;
-    margin-left: 0; /* Remover margem lateral em telas menores */
-  }
-
-  .cadastro-container {
     margin-left: 0; /* Remover margem lateral em telas menores */
   }
 }

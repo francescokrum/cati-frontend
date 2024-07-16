@@ -6,12 +6,12 @@
 }
 
 .login-form {
-  width: 370px;
+  width: 330px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  height: 80vh;
+  height: 70vh;
   background-color: #f0f0f0;
   border-radius: 15px;
   margin-bottom: 0px;
