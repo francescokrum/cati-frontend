@@ -27,8 +27,8 @@
             <td>{{ desenvolvedor.salario.toFixed(2) | currency }}</td>
             <td>{{ desenvolvedor.cargo }}</td>
             <td>
-              <button class="btn btn-edit">Editar</button>
-              <button class="btn btn-delete" (click)="removerDev(desenvolvedor)">Excluir</button>
+              <button id="button" class="btn btn-edit">Editar</button>
+              <button id="button" class="btn btn-delete" (click)="removerDev(desenvolvedor)">Excluir</button>
             </td>
           </tr>
         </tbody>

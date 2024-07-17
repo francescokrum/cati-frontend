@@ -35,8 +35,8 @@ export class FormSolicitarChamadoComponent {
 
     this.chamadoService.cadastrarChamado(this.chamado).subscribe({
       next: mensagem => {
-        console.log('Chamado solicitado com sucesso:', mensagem);
-        this.chamado = new Chamado(); 
+        alert('Chamado solicitado com sucesso:');
+        this.chamado = new Chamado();
       },
       error: (error: any) => {
         alert('Erro ao cadastrar produto');

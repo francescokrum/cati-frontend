@@ -1,3 +1,4 @@
+import { Cliente } from "./cliente";
 import { ProdutoDTO } from "./produtoDTO";
 
 export class Chamado{
@@ -7,7 +8,8 @@ export class Chamado{
   descricao!: string;
   status?: string;
   gravidade!: string;
-  recurso?: string;
+  recurso?: File;
   produto!: ProdutoDTO;
+  cliente!: Cliente;
 
  }

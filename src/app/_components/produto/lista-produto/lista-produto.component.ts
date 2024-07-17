@@ -3,6 +3,7 @@ import { Unidade } from '../../../models/unidade';
 import { UnidadeService } from '../../../services/unidade.service';
 import { Produto } from '../../../models/produto';
 import { ProdutoService } from '../../../services/produto.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-lista-produto',
@@ -37,10 +38,16 @@ export class ListaProdutoComponent {
       this.produtoService.removerProduto(produto.id).subscribe({
         next: mensagem => {
           this.lista = this.lista.filter(prod => prod.id !== produto.id);
+          Swal.fire({
+            icon: "success",
+            title: "Produto excluído!"
+          });
         },
         error: (error: any) => {
-          alert('Erro ao remover desenvolvedor');
-          console.error('Erro ao remover desenvolvedor:', error);
+          Swal.fire({
+            icon: "error",
+            title: "Não pode excluir o produto!"
+          });
         }
       });
     } else {

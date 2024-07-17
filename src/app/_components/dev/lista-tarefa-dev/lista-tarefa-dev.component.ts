@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Tarefa } from '../../../models/tarefa';
 import { TarefaService } from '../../../services/tarefa.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-lista-tarefa-dev',
@@ -27,14 +28,18 @@ export class ListaTarefaDevComponent {
   }
 
   editarTarefa(tarefa: Tarefa): void {
-    console.log('TAREFA:', tarefa);
     this.tarefaService.editarTarefa(tarefa).subscribe({
       next: mensagem => {
-        console.log('Tarefa atualizada com sucesso!', mensagem);
+        Swal.fire({
+          icon: "success",
+          title: "Tarefa atualizada!"
+        });
       },
       error: (error: any) => {
-        alert('Erro ao editar seus dados');
-        console.error('Erro ao editar tarefa:', error);
+        Swal.fire({
+          icon: "error",
+          title: "Erro ao atualizar tarefa!"
+        });
       }
     });
   }

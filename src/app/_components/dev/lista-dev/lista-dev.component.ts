@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Desenvolvedor } from '../../../models/desenvolvedor';
 import { DesenvolvedorService } from '../../../services/desenvolvedor.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-lista-dev',
@@ -35,10 +36,16 @@ export class ListaDevComponent implements OnInit {
       this.desenvolvedorService.removerDev(desenvolvedor.id).subscribe({
         next: mensagem => {
           this.lista = this.lista.filter(dev => dev.id !== desenvolvedor.id);
+          Swal.fire({
+            icon: "success",
+            title: "Desenvolvedor excluido!"
+          });
         },
         error: (error: any) => {
-          alert('Erro ao remover desenvolvedor');
-          console.error('Erro ao remover desenvolvedor:', error);
+          Swal.fire({
+            icon: "error",
+            title: "Não pode excluir um desenvolvedor com tarefas atribuídas!"
+          });
         }
       });
     } else {

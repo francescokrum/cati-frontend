@@ -6,13 +6,16 @@
   align-items: center;
 }
 
+#button{
+  width: 80px;
+}
 
 .cadastro-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 120px;
   width: 80%; /* Ajuste conforme necessário */
 }
 

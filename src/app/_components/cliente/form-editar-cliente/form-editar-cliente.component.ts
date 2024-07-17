@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Cliente } from '../../../models/cliente';
 import { ClienteService } from '../../../services/cliente.service';
+import { ClienteDTOSenha } from '../../../models/clienteDTOSenha';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form-editar-cliente',
@@ -24,18 +26,22 @@ export class FormEditarClienteComponent {
     )
   }
 
-  editarCliente(): void{
 
-    this.clienteService.editarCliente(this.cliente).subscribe({
+  editarCliente(cliente: Cliente): void{
+
+    this.clienteService.editarCliente(cliente).subscribe({
       next: mensagem => {
-        console.log('Usuario editado com sucesso!', mensagem);
+        Swal.fire({
+          icon: "success",
+          title: "Usuário editado!"
+        });
       },
       error: (error: any) => {
-        alert('Erro ao editar seus dados');
-        console.error('Erro ao editar cliente:', error);
+        Swal.fire({
+          icon: "error",
+          title: "Erro ao editar usuário!"
+        });
       }
     })
-
-
   }
 }

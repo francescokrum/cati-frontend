@@ -15,8 +15,8 @@
           <tr *ngFor="let produto of lista">
             <td>{{ produto.nome }}</td>
             <td>
-              <button class="btn btn-edit">Editar</button>
-              <button class="btn btn-delete" (click)="removerProduto(produto)">Excluir</button>
+              <button id="button" class="btn btn-edit" routerLink="/admin/editarProduto">Editar</button>
+              <button id="button" class="btn btn-delete" (click)="removerProduto(produto)">Excluir</button>
             </td>
           </tr>
         </tbody>

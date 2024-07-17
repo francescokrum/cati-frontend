@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { Unidade } from '../../../models/unidade';
 import { UnidadeService } from '../../../services/unidade.service';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-unidade',
@@ -12,7 +14,7 @@ export class ListaUnidadeComponent {
     lista: Unidade[] = [];
     private unidadeService = inject(UnidadeService)
 
-    constructor() {}
+    constructor(private router: Router) {}
 
     ngOnInit(): void {
     this.buscarUnidades();
@@ -30,15 +32,29 @@ export class ListaUnidadeComponent {
     })
   }
 
+  editarUnidade(id?: number): void {
+    if (id !== undefined) {
+      this.router.navigate(['/admin/editarUnidade', id]);
+    } else {
+      console.error('ID da unidade não está definido.');
+    }
+  }
+
   removerDev(unidade: Unidade): void {
     if (unidade.id !== undefined) {
       this.unidadeService.removerUnidade(unidade.id).subscribe({
         next: mensagem => {
           this.lista = this.lista.filter(dev => dev.id !== unidade.id);
+          Swal.fire({
+            icon: "success",
+            title: "Unidade de negócio excluída!"
+          });
         },
         error: (error: any) => {
-          alert('Erro ao remover desenvolvedor');
-          console.error('Erro ao remover desenvolvedor:', error);
+          Swal.fire({
+            icon: "error",
+            title: "Não pode excluir uma unidade vinculada a clientes e produtos!"
+          });
         }
       });
     } else {

@@ -17,8 +17,8 @@
             <td>{{ unidade.nome }}</td>
             <td>{{ unidade.cnpj }}</td>
             <td>
-              <button class="btn btn-edit">Editar</button>
-              <button class="btn btn-delete" (click)="removerDev(unidade)">Excluir</button>
+              <button class="btn btn-edit" (click)="editarUnidade(unidade.id)">Editar</button>
+              <button id="button" class="btn btn-delete" (click)="removerDev(unidade)">Excluir</button>
             </td>
           </tr>
         </tbody>

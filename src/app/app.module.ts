@@ -56,6 +56,12 @@ import { PaginaCadastroTarefaComponent } from './pages/tarefa/pagina-cadastro-ta
 import { PaginaListaTarefaComponent } from './pages/tarefa/pagina-lista-tarefa/pagina-lista-tarefa.component';
 import { ListaChamadoComponent } from './_components/chamado/lista-chamado/lista-chamado.component';
 import { PaginaListaChamadoComponent } from './pages/chamado/pagina-lista-chamado/pagina-lista-chamado.component';
+import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+import { EditarUnidadeComponent } from './_components/unidade/editar-unidade/editar-unidade.component';
+import { PaginaEditarUnidadeComponent } from './pages/unidade/pagina-editar-unidade/pagina-editar-unidade.component';
+import { EditarProdutoComponent } from './_components/produto/editar-produto/editar-produto.component';
+import { PaginaEditarProdutoComponent } from './pages/produto/pagina-editar-produto/pagina-editar-produto.component';
+
 
 @NgModule({
   declarations: [
@@ -106,7 +112,11 @@ import { PaginaListaChamadoComponent } from './pages/chamado/pagina-lista-chamad
     PaginaCadastroTarefaComponent,
     PaginaListaTarefaComponent,
     ListaChamadoComponent,
-    PaginaListaChamadoComponent
+    PaginaListaChamadoComponent,
+    EditarUnidadeComponent,
+    PaginaEditarUnidadeComponent,
+    EditarProdutoComponent,
+    PaginaEditarProdutoComponent,
   ],
   imports: [
     BrowserModule,

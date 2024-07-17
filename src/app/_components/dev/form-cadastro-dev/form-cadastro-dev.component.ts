@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { DesenvolvedorService } from '../../../services/desenvolvedor.service';
 import { Desenvolvedor } from '../../../models/desenvolvedor';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form-cadastro-dev',
@@ -19,10 +20,17 @@ desenvolvedor = new Desenvolvedor()
   cadastrarDesenvolvedor(desenvolvedor: Desenvolvedor){
     this.desenvolvedorService.cadastrarDesenvolvedor(desenvolvedor).subscribe({
       next: mensagem => {
+        Swal.fire({
+          icon: "success",
+          title: "Desenvolvedor cadastrado!",
+        });
+        this.desenvolvedor = new Desenvolvedor();
       },
       error: (error: any) => {
-        alert('Erro ao buscar desenvolvedores');
-        console.error('Erro ao buscar desenvolvedores:', error);
+        Swal.fire({
+          icon: "error",
+          title: "Dados invalidos ao cadastrar desenvolvedor!"
+        });
       }
     });
   }

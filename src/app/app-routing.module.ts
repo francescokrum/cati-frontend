@@ -23,6 +23,8 @@ import { PaginaListaUsuariosComponent } from './pages/admin/pagina-lista-usuario
 import { PaginaCadastroTarefaComponent } from './pages/tarefa/pagina-cadastro-tarefa/pagina-cadastro-tarefa.component';
 import { PaginaListaTarefaComponent } from './pages/tarefa/pagina-lista-tarefa/pagina-lista-tarefa.component';
 import { PaginaListaChamadoComponent } from './pages/chamado/pagina-lista-chamado/pagina-lista-chamado.component';
+import { PaginaEditarUnidadeComponent } from './pages/unidade/pagina-editar-unidade/pagina-editar-unidade.component';
+import { PaginaEditarProdutoComponent } from './pages/produto/pagina-editar-produto/pagina-editar-produto.component';
 
 const routes: Routes = [
   { path: '', component: PaginaLoginComponent },
@@ -45,6 +47,8 @@ const routes: Routes = [
       { path: 'cadastrarTarefa', component: PaginaCadastroTarefaComponent },
       { path: 'listarTarefa', component: PaginaListaTarefaComponent },
       { path: 'listarChamado', component: PaginaListaChamadoComponent },
+      { path: 'editarUnidade/:id', component: PaginaEditarUnidadeComponent },
+      { path: 'editarProduto', component: PaginaEditarProdutoComponent },
     ]
   },
 

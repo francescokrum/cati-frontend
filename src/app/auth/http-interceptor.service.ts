@@ -2,6 +2,7 @@ import { HttpErrorResponse, HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
+import Swal from 'sweetalert2';
 
 export const meuhttpInterceptor: HttpInterceptorFn = (request, next) => {
 
@@ -19,11 +20,13 @@ export const meuhttpInterceptor: HttpInterceptorFn = (request, next) => {
   return next(request).pipe(
     catchError((err: any) => {
       if (err instanceof HttpErrorResponse) {
-
-
         if (err.status === 401) {
-          alert('401 - tratar aqui');
-          router.navigate(['/login']);
+          Swal.fire({
+            icon: "error",
+            title: "Login ou senha incorretos",
+          }).then(() => {
+            router.navigate(['/login']);
+          });
         } else if (err.status === 403) {
           alert('403 - tratar aqui');
         } else {

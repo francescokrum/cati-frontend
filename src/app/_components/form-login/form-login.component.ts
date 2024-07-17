@@ -4,6 +4,7 @@ import { Login } from '../../auth/login';
 import { LoginService } from '../../auth/login-service.service';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -37,17 +38,19 @@ export class FormLoginComponent {
           else if(this.loginService.hasPermission("DEV")){
             this.router.navigate(['/dev'])
           }
-          this.snackBar.open('Usuário autenticado com sucesso!', 'Fechar', {
-            duration: 3000,
-            panelClass: ['green-snackbar']
+          Swal.fire({
+            icon: "success",
+            title: "Usuario autenticado com sucesso!"
           });
         }
         else {
-          alert('não veio token!')
+          error: (error: any) => {
+            Swal.fire({
+              icon: error,
+              title: "Login ou senha incorretos!",
+            })
+          }
         }
-      },
-      error: erro => {
-        alert('Login ou Senha incorretos!');
       }
     })
   }

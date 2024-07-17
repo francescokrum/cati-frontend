@@ -6,7 +6,7 @@
 }
 
 .login-form {
-  width: 300px;
+  width: 350px;
   padding: 20px;
   background-color: #f0f0f0;
   border-radius: 8px;
@@ -14,15 +14,15 @@
 }
 
 .green-snackbar {
-  background-color: #4caf50; /* Cor verde */
-  color: #ffffff; /* Cor do texto branco */
+  background-color: #4caf50;
+  color: #ffffff;
 }
 
 .titulo {
   font-size: 35px;
   color: purple;
-  text-align: center; /* Centraliza o título */
-  margin-bottom: 20px; /* Adiciona espaço entre o título e o formulário */
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 
@@ -33,7 +33,7 @@ h2{
 }
 
 .form-group {
-  margin-bottom: 10px; /* Ajusta o espaço entre os elementos do formulário */
+  margin-bottom: 10px;
 }
 
 .login-form label {

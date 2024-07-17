@@ -4,6 +4,7 @@
     <div *ngFor="let chamado of chamados" class="login-form">
       <form>
         <div class="form-group">
+          <input type="hidden" [(ngModel)]="chamado.id">
           <label for="titulo">Título:</label>
           <p>{{ chamado.titulo }}</p>
         </div>
@@ -16,21 +17,25 @@
           <h4 class="inline">{{ chamado.status }}</h4>
         </div>
         <div class="form-group">
-          <label for="descricao">Gravidade:</label>
+          <label for="gravidade">Gravidade:</label>
           <h4 class="inline">{{ chamado.gravidade }}</h4>
         </div>
         <div class="form-group">
-          <label for="descricao">Referente ao produto:</label>
+          <label for="produto">Referente ao produto:</label>
           <h4 class="inline">{{ chamado.produto.nome }}</h4>
         </div>
         <div class="form-group">
-          <label for="status">Atualizar status do chamado:</label>
-          <select>
+          <label for="cliente">Referente ao cliente:</label>
+          <h4 class="inline">{{ chamado.cliente.nome }}</h4>
+        </div>
+        <div class="form-group">
+          <label for="status">Atualizar status:</label>
+          <select name="status" change="atribuiValores(chamado.id, chamado.status)" [(ngModel)]="chamado.status">
             <option value="SOLICITADO">Solicitado</option>
             <option value="EM_ANALISE">Em análise</option>
             <option value="FINALIZADO">Finalizado</option>
           </select >
-          <button class="inline" id="botao" type="submit">Atualizar</button>
+          <button class="inline" id="botao" type="submit" (click)="transformaEmDTO(chamado)" class="btn btn-success">Atualizar</button>
         </div>
       </form>
     </div>

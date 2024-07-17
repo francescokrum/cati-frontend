@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { NgForm } from '@angular/forms'; // Importe NgForm para utilizar no método onSubmit
 import { Cliente } from '../../../models/cliente';
 import { ClienteService } from '../../../services/cliente.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form-cadastro-cliente',
@@ -17,7 +18,10 @@ export class FormCadastroClienteComponent {
   cadastrarCliente(cliente: Cliente): void {
     this.clienteService.cadastrarCliente(cliente).subscribe({
       next: mensagem => {
-        alert('Cadastro efetuado com sucesso!');
+        Swal.fire({
+          icon: "success",
+          title: "Cliente cadastrado com sucesso"
+        });
       },
       error: (error: any) => {
         alert('Erro ao cadastrar cliente');

@@ -28,6 +28,14 @@ export class UnidadeService {
       return this._httpClient.get<Unidade[]>(this.url + '/unidadeDeNegocio')
     }
 
+    buscarUnidadePorId(id: number): Observable<Unidade>{
+      return this._httpClient.get<Unidade>(this.url + '/unidadeDeNegocio/' + id)
+    }
+
+    editarUnidade(unidade: Unidade): Observable<Unidade>{
+      return this._httpClient.put<Unidade>(this.url + '/unidadeDeNegocio/editarUnidadeDeNegocio', unidade)
+    }
+
     removerUnidade(id: number): Observable<string>{
       return this._httpClient.delete<string>(this.url + '/unidadeDeNegocio/' + id, { responseType: 'text' as 'json' })
     }

@@ -6,6 +6,9 @@
   align-items: center;
 }
 
+#button{
+  width: 80px;
+}
 
 .cadastro-container {
   display: flex;

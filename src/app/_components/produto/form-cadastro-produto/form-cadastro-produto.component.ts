@@ -3,6 +3,7 @@ import { Unidade } from '../../../models/unidade';
 import { UnidadeService } from '../../../services/unidade.service';
 import { ProdutoService } from '../../../services/produto.service';
 import { ProdutoDTO } from '../../../models/produtoDTO';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form-cadastro-produto',
@@ -34,12 +35,17 @@ export class FormCadastroProdutoComponent {
 
     this.produtoService.cadastrarProduto(this.produtoDTO).subscribe({
       next: mensagem => {
-        console.log('Produto cadastrado com sucesso:', mensagem);
-        this.produtoDTO = new ProdutoDTO(); // Limpa o formulário após o cadastro
+        Swal.fire({
+          icon: "success",
+          title: "Produto cadastrado!"
+        });
+        this.produtoDTO = new ProdutoDTO();
       },
       error: (error: any) => {
-        alert('Erro ao cadastrar produto');
-        console.error('Erro ao cadastrar produto:', error);
+        Swal.fire({
+          icon: "error",
+          title: "Dados invalidos ao cadastrar produto!"
+        });
       }
     });
   }
